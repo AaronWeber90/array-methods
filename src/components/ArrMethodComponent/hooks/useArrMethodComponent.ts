@@ -81,5 +81,6 @@ export const useArrMethodComponent = (arrayMethodFn: Function) => {
     state.numInputVals
   )
 
+
   return { state, dispatch, result }
 }

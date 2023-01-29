@@ -6,6 +6,7 @@ type ConfigObject = {
   ) => {}[] | {}
   method: string
   hasNumberInput?: boolean
+  hideMethodArgElement?: boolean
 }
 
 type ConfigObjects = {
@@ -14,8 +15,7 @@ type ConfigObjects = {
 
 export const ArrMethodConfig: ConfigObjects = {
   filterComponent: {
-    arrayMethodFn: (arr, methodArg) =>
-      arr.filter((item) => item.isEmoticon1 === methodArg),
+    arrayMethodFn: (arr, methodArg) => arr.filter((item) => item.isEmoticon1 === methodArg),
     method: "filter(item => item ===",
   },
   findComponent: {
@@ -46,14 +46,15 @@ export const ArrMethodConfig: ConfigObjects = {
     method: "every(item => item ===",
   },
   sliceComponent: {
-    arrayMethodFn: (arr, _, numInput) =>
-      arr.slice(numInput.numInput1Val, numInput.numInput2Val),
+    arrayMethodFn: (arr, _, numInput) => arr.slice(numInput.numInput1Val, numInput.numInput2Val),
     method: "slice(",
     hasNumberInput: true,
+    hideMethodArgElement: true
   },
   "sort-component": {
     arrayMethodFn: (arr) => [...arr].sort((a, b) => b.id - a.id),
     method: "sort((a, b) => b.id - a.id",
+    hideMethodArgElement: true
   },
 }
 

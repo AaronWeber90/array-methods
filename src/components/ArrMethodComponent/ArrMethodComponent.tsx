@@ -11,7 +11,8 @@ import { Props } from "./types"
 export const ArrMethodComponent = ({
   arrayMethodFn,
   method,
-  withNumberInput,
+  hasNumberInput,
+  hideMethodArgElement,
 }: Props) => {
   const { state, dispatch, result } = useArrMethodComponent(arrayMethodFn)
   const { colorMode } = useColorMode()
@@ -63,7 +64,7 @@ export const ArrMethodComponent = ({
         >
           {`].${method}`}{" "}
         </Text>
-        {withNumberInput && (
+        {hasNumberInput && (
           <>
             <CustomNumberInput
               name="numInput1Val"
@@ -79,7 +80,7 @@ export const ArrMethodComponent = ({
             />
           </>
         )}
-        {!withNumberInput && (
+        {!hideMethodArgElement && (
           <Button
             m="1"
             variant="outline"
@@ -90,7 +91,6 @@ export const ArrMethodComponent = ({
             {state.arrMethodArg ? EMOTICONS.EMOTICON_1 : EMOTICONS.EMOTICON_2}
           </Button>
         )}
-
         <Text
           fontSize="xl"
           color={fontColor}

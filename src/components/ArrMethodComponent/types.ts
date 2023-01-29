@@ -38,5 +38,6 @@ export type ActionType =
 export type Props = {
   arrayMethodFn: Function
   method: string
-  withNumberInput?: boolean
+  hasNumberInput?: boolean
+  hideMethodArgElement?: boolean
 }

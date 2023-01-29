@@ -25,9 +25,7 @@ export const App = () => {
           {Object.entries(ArrMethodConfig).map(([key, obj]) => (
             <ArrMethodComponent
               key={key}
-              arrayMethodFn={obj.arrayMethodFn}
-              method={obj.method}
-              withNumberInput={obj.hasNumberInput}
+              {...obj}
             />
           ))}
         </VStack>
